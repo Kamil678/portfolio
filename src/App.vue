@@ -1,18 +1,22 @@
 <template>
-  <nav-component @click-home="onClickHome">
+  <nav-component
+    @click-home="activeElement = 'home'"
+    @click-about="activeElement = 'about'"
+    @click-skills="activeElement = 'skills'"
+    @click-portfolio="activeElement = 'portfolio'"
+    @click-contact="activeElement = 'contact'"
+    :active-element="activeElement"
+  >
   </nav-component>
+  <header-component />
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import NavComponent from './components/NavComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
 
-function onClickHome() {
-  console.log('Click home')
-}
+const activeElement = ref('home')
 </script>
 
-<style lang="scss">
-body{
-  font-family: 'Poppins', sans-serif;
-}
-</style>
+<style lang="scss"></style>
