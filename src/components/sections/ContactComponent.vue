@@ -23,7 +23,7 @@
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
           <textarea name="message" rows="6" placeholder="Your message"></textarea>
-          <input type="hidden" name="_next" value="http://localhost:5173#contact?sendEmail=true">
+          <input type="hidden" name="_next" :value="`${baseUrl}#contact`">
           <input type="hidden" name="_captcha" value="false">
           <p v-if="isSendEmail" class="success-message">Message was sent</p>
           <button type="submit" class="basic-btn btn-with-background">Submit</button>
@@ -39,6 +39,8 @@ import FooterComponent from './FooterComponent.vue';
 import ButtonComponent from '../shared/ButtonComponent.vue';
 
 defineProps(['isSendEmail'])
+
+const baseUrl = import.meta.env.VITE_BASE_URL;
 
 function onDownloadCV() {
   const basePath = window.location.origin
