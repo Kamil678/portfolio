@@ -33,7 +33,7 @@ onMounted(() => {
     sections.forEach(section => {
       const top = window.scrollY;
       const height = section.offsetHeight;
-      const offset = section.offsetTop - 200;
+      const offset = section.offsetTop - 400;
       const id = section.getAttribute('id')
 
       if (top >= offset && top < offset + height) {
