@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about" class="about sections">
     <!-- <h2>About <span>Me</span></h2>
     <div class="img-container">
       <img src="../assets/kp-image.png" alt="The pictures shows Kamil Pigulak" />
@@ -21,38 +21,89 @@
       <div class="about-col-2">
         <h2 class="subtitle">About <span>Me</span></h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit quis sequi inventore
-          quaerat quod incidunt, voluptatibus consequuntur amet odio perferendis provident! Adipisci
-          suscipit maxime sequi necessitatibus, quaerat iusto doloribus velit!
+          I am a frontend developer and I have been learning the broad frontend for more than 4 years, while I have been working commercially for 2 years. I participated in the creation of projects from
+          scratch and maintained existing systems. Every day I try to develop my frontend skills, but also with great enthusiasm I get to know the backend, especially Node.js and PHP.
         </p>
         <div class="tab">
           <p
             class="tab-links"
             :class="activeTab === 'skills' ? 'active-link' : ''"
-            @click="activeTab = 'skills'"
-          >
+            @click="activeTab = 'skills'">
             Skills
           </p>
           <p
             class="tab-links"
             :class="activeTab === 'experince' ? 'active-link' : ''"
-            @click="activeTab = 'experince'"
-          >
+            @click="activeTab = 'experince'">
             Experience
           </p>
           <p
             class="tab-links"
             :class="activeTab === 'educations' ? 'active-link' : ''"
-            @click="activeTab = 'educations'"
-          >
+            @click="activeTab = 'educations'">
             Eductaions
           </p>
         </div>
-        <!-- <div class="tab-contents">
-          <div>
-            <img src="../../assets/css.svg" alt="CSS logo" />
+        <div v-if="activeTab === 'skills'" class="tab-contents">
+          <div class="skills-container">
+            <div class="skill">
+              <img src="../../assets/html.svg" alt="CSS logo" width="50px" />
+              <p class="description">HTML</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/git.svg" alt="CSS logo" width="50px" />
+              <p class="description">GIT</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/css.svg" alt="CSS logo" width="50px" />
+              <p class="description">CSS</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/scss.svg" alt="CSS logo" width="50px" />
+              <p class="description">SCSS, SAAS</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/javascript.svg" alt="CSS logo" width="50px" />
+              <p class="description">JavaScript</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/typescript.svg" alt="CSS logo" width="50px" />
+              <p class="description">TypeScript</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/jquery.svg" alt="CSS logo" width="50px" />
+              <p class="description">jQuery</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/vue.svg" alt="CSS logo" width="50px" />
+              <p class="description">Vue</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/cypress.svg" alt="CSS logo" width="50px" />
+              <p class="description">Cypress</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/react.svg" alt="CSS logo" width="50px" />
+              <p class="description basics">Basics React</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/php.svg" alt="CSS logo" width="50px" />
+              <p class="description basics">Basics PHP</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/nodejs.svg" alt="CSS logo" width="50px" />
+              <p class="description basics">Basics Node.js</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/mongodb.svg" alt="CSS logo" width="50px" />
+              <p class="description basics">Basics MongoDB</p>
+            </div>
+            <div class="skill">
+              <img src="../../assets/docker.svg" alt="CSS logo" width="50px" />
+              <p class="description basics">Basics Docker</p>
+            </div>
           </div>
-        </div> -->
+        </div>
         <div v-if="activeTab === 'experince'" class="tab-contents">
           <ul>
             <li><span>05.2022 - Current</span><br />Frontend Developer at Mediaflex</li>
@@ -69,104 +120,49 @@
 </template>
 
 <script setup>
-import ButtonComponent from '../shared/ButtonComponent.vue'
 import { ref } from 'vue'
 
 const activeTab = ref('skills')
 </script>
 
 <style lang="scss">
-// .about {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 20px 0;
-//   // height: 100vh;
-
-//   h2 {
-//     color: $textColor;
-//     font-size: 48px;
-
-//     span {
-//       color: $secondColor;
-//     }
-//   }
-
-//   .img-container {
-//     position: relative;
-//     width: 250px;
-//     height: 250px;
-//     border-radius: 50%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     img {
-//       width: 90%;
-//       border-radius: 50%;
-//       border: 2px solid $secondColor;
-//     }
-
-//     .spin {
-//       width: 100%;
-//       height: 100%;
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%) rotate(0);
-//       border-radius: 50%;
-//       border-top: 2px solid transparent;
-//       border-bottom: 2px solid transparent;
-//       border-left: 2px solid $secondColor;
-//       border-right: 2px solid $secondColor;
-//     }
-//   }
-
-//   .about-info {
-//     text-align: center;
-//     color: $textColor;
-
-//     h3 {
-//       font-size: 36px;
-//     }
-
-//     p {
-//       max-width: 1000px;
-//       font-size: 18px;
-//     }
-//   }
-// }
 .about {
-  padding: 80px 0;
   color: #ababab;
-  margin: 0 7%;
+  margin: 70px 7% 0 7%;
 
   .about-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 
     .about-col-1 {
-      flex-basis: 35%;
+      flex-basis: 100%;
+      margin-bottom: 30px;
 
       img {
         background-color: #343434;
         width: 100%;
         border-radius: 15px;
       }
+
+      @media only screen and (min-width: $brekpointMedium) {
+        flex-basis: 35%;
+        margin-bottom: 0;
+      }
     }
 
     .about-col-2 {
-      flex-basis: 60%;
+      flex-basis: 100%;
+      font-size: 14px;
 
       .tab {
         display: flex;
         margin: 20px 0 40px 0;
 
         .tab-links {
-          margin-right: 50px;
-          font-size: 18px;
+          margin-right: 20px;
+          font-size: 16px;
           font-weight: 500;
           cursor: pointer;
           position: relative;
@@ -179,7 +175,12 @@ const activeTab = ref('skills')
             bottom: -6px;
             left: 0;
             background-color: $secondColor;
-            transition: 0.3s;
+            transition: 0.4s;
+
+            @media only screen and (min-width: $brekpointMedium) {
+              font-size: 18px;
+              margin-right: 20px;
+            }
           }
 
           &:hover::after {
@@ -208,8 +209,66 @@ const activeTab = ref('skills')
             }
           }
         }
+
+        .skills-container {
+          display: flex;
+          align-items: center;
+          gap: 20px 20px;
+          flex-wrap: wrap;
+          //width: 50%;
+
+          .skill {
+            background-color: #262626;
+            padding: 10px;
+            border-radius: 6px;
+            transition: transform .4s;
+            position: relative;
+            min-width: 80px;
+            text-align: center;
+
+            &:hover {
+              background: $secondColor;
+              transform: translateY(-10px);
+
+              .description {
+                height: 50%;
+
+                &.basics {
+                  height: 60%;
+                }
+              }
+            }
+
+            .description {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 0;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              overflow: hidden;
+              background: rgba(0, 0, 0, 0.8);
+              padding: 0 10px;
+              text-align: center;
+              font-size: 14px;
+              transition: height 0.4s;
+              color: $textColor;
+            }
+          }
+        }
+      }
+
+      @media only screen and (min-width: $brekpointMedium) {
+        flex-basis: 60%;
+        font-size: 16px;
       }
     }
+  }
+
+  @media only screen and (min-width: $brekpointMedium) {
+    margin: 120px 7% 0 7%;
   }
 }
 </style>

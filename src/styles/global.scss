@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $background;
   font-family: 'Poppins', sans-serif;
@@ -15,11 +19,42 @@ a {
   text-decoration: none;
 }
 
+.home,.about, .portfolio, .contact{
+  //height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .about-container,
-.portfolio-container {
+.portfolio-container, .contact-container {
   .subtitle {
     color: $textColor;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 600;
+
+    @media only screen and (min-width: $brekpointMedium) {
+      font-size: 50px;
+    }
+  }
+}
+
+.basic-btn {
+  background: transparent;
+  font-size: 16px;
+  border: 2px solid $secondColor;
+  cursor: pointer;
+  padding: 10px 40px;
+  border-radius: 6px;
+  color: $textColor;
+  transition: background 0.4s;
+
+  &:hover {
+    background: $secondColor;
+    color: $background;
+  }
+
+  &.btn-with-background{
+    background: $secondColor;
+    color: $background;
   }
 }

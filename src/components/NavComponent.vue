@@ -2,24 +2,19 @@
   <nav>
     <div class="menu-wrap">
       <div class="logo">
-        <a href="#"><span>K</span>amil.</a>
+        <a href="#home"><span>K</span>amil.</a>
       </div>
       <div class="menu">
         <i class="bx bx-x" @click="closeMenu"></i>
         <a
-          href="#"
-          id="home"
+          href="#home"
           @click="$emit('clickHome')"
-          :class="activeElement === 'home' ? 'active' : ''"
-          >Home
+          :class="activeElement === 'home' ? 'active' : ''">Home
         </a>
         <a
-          href="#"
-          id="about"
+          href="#about"
           @click="$emit('clickAbout')"
-          :class="activeElement === 'about' ? 'active' : ''"
-          >About</a
-        >
+          :class="activeElement === 'about' ? 'active' : ''">About</a>
         <!-- <a
           href="#"
           id="skills"
@@ -28,19 +23,13 @@
           >Skills</a
         > -->
         <a
-          href="#"
-          id="portfolio"
+          href="#portfolio"
           @click="$emit('clickPortfolio')"
-          :class="activeElement === 'portfolio' ? 'active' : ''"
-          >Portfolio</a
-        >
+          :class="activeElement === 'portfolio' ? 'active' : ''">Portfolio</a>
         <a
-          href="#"
-          id="contact"
+          href="#contact"
           @click="$emit('clickContact')"
-          :class="activeElement === 'contact' ? 'active' : ''"
-          >Contact</a
-        >
+          :class="activeElement === 'contact' ? 'active' : ''">Contact</a>
       </div>
       <i class="bx bx-menu" @click="showMenu"></i>
     </div>
@@ -64,17 +53,18 @@ const closeMenu = () => {
 <style lang="scss">
 nav {
   padding: 15px 0;
-  // position: fixed;
-  // top: 0;
-  //left: 50%;
-  //transform: translateX(-50%);
   width: 100%;
-  //background-color: #2b2b2b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #262626;
 
   .menu-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 7%;
 
     .bx-menu,
     .bx-x {
@@ -104,7 +94,7 @@ nav {
       height: 100vh;
       padding-top: 50px;
       z-index: 2;
-      transition: right 0.3s;
+      transition: right 0.4s;
 
       &.show {
         right: 0;
@@ -112,7 +102,7 @@ nav {
 
       a {
         position: relative;
-        color: $textColor;
+        color: $background;
         font-size: 20px;
         margin: 10px 25px;
 
@@ -124,7 +114,7 @@ nav {
           bottom: -6px;
           left: 0;
           background-color: $secondColor;
-          transition: 0.3s;
+          transition: 0.4s;
         }
 
         &:hover::after {
@@ -149,6 +139,7 @@ nav {
 
         @media only screen and (min-width: $brekpointMedium) {
           margin: 0;
+          color: $textColor;
         }
       }
 
@@ -172,6 +163,7 @@ nav {
     }
 
     @media only screen and (min-width: $brekpointMedium) {
+
       .bx-menu,
       .bx-x {
         display: none;
