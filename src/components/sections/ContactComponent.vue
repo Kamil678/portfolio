@@ -16,7 +16,6 @@
           <a href="https://www.linkedin.com/in/kamil-pigulak/"><i class='bx bxl-linkedin-square'></i></a>
           <a href="https://github.com/Kamil678"><i class='bx bxl-github'></i></a>
         </div>
-        <!-- <a href="/src/assets/CV.pdf" download class="basic-btn download">Download CV</a> -->
         <button-component btn-text="Download CV" @click="onDownloadCV" />
       </div>
       <div class="contact-form">

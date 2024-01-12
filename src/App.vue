@@ -22,7 +22,6 @@ import AboutComponent from './components/sections/AboutComponent.vue'
 import PortfolioComponent from './components/sections/PortfolioComponent.vue'
 import ContactComponent from './components/sections/ContactComponent.vue'
 import { scrollToElement } from './services/helpers'
-//import FooterComponent from './components/sections/FooterComponent.vue'
 
 const activeElement = ref('home')
 
@@ -59,7 +58,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  //height: 100vh;
   margin: 0 7%;
   margin-top: 130px;
 

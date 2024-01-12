@@ -57,7 +57,6 @@ header.header {
 
     .header-image {
       img {
-        // width: 200px;
         display: none;
 
         @media (min-width: $brekpointMedium) {

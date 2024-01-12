@@ -1,19 +1,5 @@
 <template>
   <section id="about" class="about sections">
-    <!-- <h2>About <span>Me</span></h2>
-    <div class="img-container">
-      <img src="../assets/kp-image.png" alt="The pictures shows Kamil Pigulak" />
-      <span class="spin"></span>
-    </div>
-    <div class="about-info">
-      <h3>Frontend Developer!</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas repellendus voluptatum
-        impedit ut cum excepturi officiis repudiandae, illo expedita qui ea fuga laudantium delectus
-        voluptates eos sed ipsam, nesciunt adipisci.
-      </p>
-    </div>
-    <button-component btn-text="Read more" /> -->
     <div class="about-container">
       <div class="about-col-1">
         <img src="../../assets/kp-image.png" alt="The pictures shows Kamil Pigulak" />

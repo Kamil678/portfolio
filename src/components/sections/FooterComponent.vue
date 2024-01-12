@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>Copyright by Kamil Pigulak</p>
+    <p>Copyright &#169; by Kamil Pigulak</p>
   </footer>
 </template>
 
